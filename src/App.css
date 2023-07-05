@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+/* @font-face {
+  font-family: "AlfaSlabOne-Regular";
+  src: url(./Clonewebsite/AlfaSlabOne-Regular.ttf);
+}
+.squad {
+  font-family: "AlfaSlabOne-Regular";
+} */
+@font-face {
+  font-family: "SpaceGrotesk-Light";
+  src: url(./Clonewebsite/SpaceGrotesk-Light.ttf);
+}
+.bold {
+  font-family: "SpaceGrotesk-Light";
+}
+@font-face {
+  font-family: "Cairo-VariableFont_slnt,wght";
+  src: url(./Clonewebsite/Cairo-VariableFont_slnt\,wght.ttf);
+}
+.nav {
+  font-family: "Cairo-VariableFont_slnt,wght";
+}
+@font-face {
+  font-family: "Anton-Regular";
+  src: url(./Clonewebsite/Anton-Regular.ttf);
+}
+.head {
+  font-family: "Anton-Regular";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.slick-slider .slick-arrow::before {
+  color: black;
+  font-size: 1.8rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.slick-slider .slick-dots button::before {
+  font-size: 0.5rem;
+  margin-top: -220px;
+ /*  margin-left: 400px; */
+ color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*infinite scroll*/
+.scroll {
+  animation: right 10s linear infinite;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes right {
   from {
-    transform: rotate(0deg);
+    transform: translateX(0%);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(-100%);
   }
 }
