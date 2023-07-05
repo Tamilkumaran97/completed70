@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import giving from "./assets/visit video.mp4";
 import { motion } from "framer-motion";
-import image from "./assets/pexels-rfstudio-3810792.jpg";
+
 import image1 from "./assets/contentbg.jpg";
 import contentbg from "./assets/aboutus.jpg";
 import { gsap } from "gsap";

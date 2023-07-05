@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Twirl as Hamburger } from "hamburger-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
+
 import { AiOutlineMessage } from "react-icons/ai";
 
 const Navbar = () => {
