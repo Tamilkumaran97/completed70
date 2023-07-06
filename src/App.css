@@ -1,8 +1,8 @@
-/* @font-face {
+ /* @font-face {
   font-family: "AlfaSlabOne-Regular";
   src: url(./Clonewebsite/AlfaSlabOne-Regular.ttf);
 }
-.squad {
+.head {
   font-family: "AlfaSlabOne-Regular";
 } */
 @font-face {
@@ -19,13 +19,13 @@
 .nav {
   font-family: "Cairo-VariableFont_slnt,wght";
 }
-@font-face {
+ @font-face {
   font-family: "Anton-Regular";
   src: url(./Clonewebsite/Anton-Regular.ttf);
 }
 .head {
   font-family: "Anton-Regular";
-}
+} 
 
 .slick-slider .slick-arrow::before {
   color: black;
