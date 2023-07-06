@@ -30,10 +30,6 @@ function App() {
           <Route path="/plan" element={<PlanVisit />} />
         </Routes>
       </AnimatePresence>
-      {/*   <Giving /> */}
-      {/*    <Connect /> */}
-      {/*   <Transition />  */}
-      {/**---------------------------------------------------- */}
     </div>
   );
 }

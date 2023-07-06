@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 import Slider from "react-slick";
 import "/node_modules/slick-carousel/slick/slick.css";
