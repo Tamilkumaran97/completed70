@@ -52,31 +52,31 @@ const PlanVisit = () => {
         initial={{ scale: 1 }}
         animate={{ scale: 0 }}
         transition={{ duration: 1.5, delay: 2.9 }}
-        className="fixed flex justify-center rounded-full bg-[#D1BFA4]  z-[70] items-center w-[100%] h-[100vh]"
+        className="fixed flex justify-center rounded-full  z-[70] items-center w-[100%] h-[100vh]"
       >
         <motion.div
           initial={{ scale: 100 }}
           animate={{ scale: 0 }}
-          transition={{ duration: 1.5, delay: 3 }}
-          className="relative bg-[#D1BFA4] w-[1000px] h-[1000px] rounded-full"
+          transition={{ duration: 1.5, delay: 2.9 }}
+          className="relative bg-[#D1BFA4] w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[1000px] lg:h-[1000px] overflow-hidden rounded-full"
         ></motion.div>
-        <div className=" w-[1000px] absolute  overflow-hidden">
+        <div className="w-[1000px]  absolute   overflow-hidden">
           <motion.div
-            initial={{ x: 130 }}
-            animate={{ x: -1010 }}
+            initial={{ x: 0 }}
+            animate={{ x: -1000 }}
             transition={{
               duration: 2,
               delay: 2,
               type: "spring",
-              stiffness: 40,
+              stiffness: 45,
             }}
-            className=" py-10 px-4 text-center flex w-[2000px] justify-between"
+            className=" py-14 px-4 text-center w-[2000px]  flex justify-between"
           >
-            <motion.h1 className="head uppercase text-[150px] font-bold    ">
+            <h1 className=" head uppercase w-[1000px] text-center  text-4xl  md:text-[80px] lg:text-[150px] font-bold   ">
               Soul Church
-            </motion.h1>
-            <h1 className="head uppercase text-[150px] font-bold   ">
-              plan your visit
+            </h1>
+            <h1 className=" head uppercase w-[1000px] text-center   text-4xl  md:text-[80px] lg:text-[150px]  font-bold ">
+              Plan your visit
             </h1>
           </motion.div>
         </div>
@@ -84,14 +84,14 @@ const PlanVisit = () => {
 
       <div className="bg-[#F1E4EB]">
         {/**first container */}
-        <div className="z-10 relative rounded-b-[100px] lg:rounded-b-[150px]  bg-white ">
+        <div className="z-10 relative lg:rounded-b-[150px] rounded-b-3xl bg-white ">
           <div
             ref={para}
             className="w-[100%] overflow-hidden relative h-[100vh]"
           >
             <h1
               ref={ref}
-              className="absolute head text-8xl lg:text-9xl lg:py-10 xl:py-8 xl:text-[180px] text-center w-[100%] bottom-2 uppercase text-white"
+              className="absolute head text-5xl md:text-8xl lg:text-9xl lg:py-10 xl:py-8 xl:text-[180px] text-center w-[100%] bottom-2 uppercase text-white"
             >
               Welcome Home
             </h1>
@@ -106,7 +106,7 @@ const PlanVisit = () => {
               transition={{ duration: 2, delay: 3.5 }}
             >
               <video
-                className="object-cover rounded-b-[100px] lg:rounded-b-[150px] w-[100%] h-[100vh]"
+                className="object-cover rounded-b-3xl md:rounded-b-[100px] lg:rounded-b-[150px] w-[100%] h-[100vh]"
                 src={giving}
                 autoPlay
                 loop
@@ -116,13 +116,13 @@ const PlanVisit = () => {
           </div>
 
           {/**second container */}
-          <div className="w-[100%]  px-5 lg:px-10 mx-auto flex ">
-            <div className="w-1/2 flex justify-center items-center lg:p-14 xl:p-24">
+          <div className="w-[100%]  px-5 lg:px-10 mx-auto md:flex ">
+            <div className="md:w-1/2 flex justify-center items-center lg:p-14 xl:p-24">
               <div>
-                <h1 className="text-6xl lg:text-7xl xl:text-8xl font-semibold">
+                <h1 className="text-4xl md:text-6xl nav lg:text-7xl xl:text-8xl font-semibold">
                   What’s it like?
                 </h1>
-                <p className="pt-28 xl:pt-36 text-lg lg:text-xl xl:text-2xl">
+                <p className="pt-8 md:pt-28 xl:pt-36 text-base md:text-lg lg:text-xl xl:text-2xl">
                   Whoever you are and wherever you’re from, we want you to feel
                   at home from the moment you walk through the door. So here’s
                   some info on what you can expect when you join us at SOUL
@@ -130,10 +130,10 @@ const PlanVisit = () => {
                 </p>
               </div>
             </div>
-            <div className="w-1/2 h-[100vh] flex justify-center items-center ">
-              <div className="flex justify-center items-center">
+            <div className="md:w-1/2 md:h-[100vh] flex justify-center items-center ">
+              <div className="flex justify-center py-4 items-center">
                 <img
-                  className=" rounded-tl-full h-[500px] rounded-br-[2000px] object-contain"
+                  className=" rounded-tl-full h-[300px] w-[600px] md:w-auto md:h-[500px] rounded-br-[1000px] md:rounded-br-[2000px] object-cover"
                   src={contentbg}
                   alt=""
                 />
@@ -141,19 +141,21 @@ const PlanVisit = () => {
             </div>
           </div>
           {/**third container */}
-          <div className="w-[100%]  py-10 lg:py-32 bg-[#F1E4EB]">
-            <div className="flex px-10">
-              <div className="w-[40%]   text-[100px]   ">
-                <div className="head lg:ml-10">FAQS</div>
+          <div className="w-[100%] py-20 md:py-10 lg:py-32 bg-[#F1E4EB]">
+            <div className="md:flex px-4 md:px-10">
+              <div className="md:w-[40%]     ">
+                <div className="head text-5xl md:text-[100px] lg:ml-10">
+                  FAQS
+                </div>
               </div>
-              <div className="w-[70%]  lg:px-20 ">
+              <div className="md:w-[70%]  lg:px-10 ">
                 <div>
                   {/**first page */}
-                  <div className=" border-b border-gray-500">
+                  <div className=" border-b border-black">
                     <div className="flex  items-center">
                       <h1
                         onClick={() => setActive(!active)}
-                        className="w-[100%] font-bold  py-10 flex justify-between items-center cursor-pointer text-gray-800 text-lg lg:text-xl"
+                        className="w-[100%] font-semibold md:font-bold py-8 md:py-10 flex justify-between items-center cursor-pointer text-gray-800 text-[17px] md:text-lg lg:text-xl"
                       >
                         what will happen my first time?
                         <div className=" w-6 h-[2px] relative bg-black">
@@ -165,7 +167,7 @@ const PlanVisit = () => {
                     </div>
                     {active && (
                       <div className="pb-4">
-                        <p className="text-[17px]">
+                        <p className="text-sm md:text-[17px]">
                           When you turn into Mason Road, our friendly Arrivals
                           Team will show you to a suitable parking space (Blue
                           badge parking available). When you come in to SOUL
@@ -184,10 +186,10 @@ const PlanVisit = () => {
                     )}
                   </div>
                   {/** second page */}
-                  <div className=" border-b border-gray-500">
+                  <div className=" border-b border-black">
                     <h1
                       onClick={() => setOpen(!open)}
-                      className="font-bold flex items-center py-8 justify-between cursor-pointer text-gray-800 text-lg lg:text-xl"
+                      className="font-semibold md:font-bold flex items-center py-6 md:py-8 justify-between cursor-pointer text-gray-800 text-[17px] md:text-lg lg:text-xl"
                     >
                       What to wear ?
                       <div className="ml-10 w-6 h-[2px] relative bg-black">
@@ -198,7 +200,7 @@ const PlanVisit = () => {
                     </h1>
                     {open && (
                       <div className="pb-4">
-                        <p className="text-[17px]">
+                        <p className="text-sm md:text-[17px]">
                           Whatever you're comfortable in! With so many people,
                           it can get a bit warm, so layers are always a good
                           idea, but there's no dress code. Some people prefer to
@@ -210,10 +212,10 @@ const PlanVisit = () => {
                     )}
                   </div>
                   {/**third page */}
-                  <div className=" border-b border-gray-500">
+                  <div className=" border-b border-black">
                     <h1
                       onClick={() => setClose(!close)}
-                      className="font-bold cursor-pointer flex items-center justify-between text-gray-800 py-8 text-lg lg:text-xl"
+                      className="font-semibold md:font-bold cursor-pointer flex items-center justify-between text-gray-800 py-6 md:py-8 text-[17px] md:text-lg lg:text-xl"
                     >
                       What do you offer for family?
                       <div className="ml-10 w-6 h-[2px] relative bg-black">
@@ -224,7 +226,7 @@ const PlanVisit = () => {
                     </h1>
                     {close && (
                       <div className="pb-4">
-                        <p className="text-[17px]">
+                        <p className="text-sm md:text-[17px]">
                           We cater for all ages here. If you have a baby in a
                           pram, we have an area of seating where we can take a
                           number of buggies and prams. It's next to our family
@@ -241,13 +243,13 @@ const PlanVisit = () => {
                     )}
                   </div>
                   {/**fourth page */}
-                  <div className=" border-b border-gray-500">
+                  <div className=" border-b border-black">
                     <h1
                       onClick={() => setWork(!work)}
-                      className="font-bold cursor-pointer flex items-center justify-between text-gray-800 py-8 text-lg lg:text-xl"
+                      className="font-semibold md:font-bold cursor-pointer flex items-center justify-between text-gray-800 py-6 md:py-8 text-[17px] md:text-lg lg:text-xl"
                     >
                       What about my child's additional needs?
-                      <div className="ml-10 w-6 h-[2px] relative bg-black">
+                      <div className=" md:ml-10 w-6 h-[2px] relative bg-black">
                         {!work && (
                           <motion.div className="w-6 h-[2px] rotate-90 absolute bg-black"></motion.div>
                         )}
@@ -255,7 +257,7 @@ const PlanVisit = () => {
                     </h1>
                     {work && (
                       <div className="pb-4">
-                        <p className="text-[17px]">
+                        <p className="text-sm md:text-[17px]">
                           We do have loud music and flashing lights at our
                           services and we know this won't work for every child.
                           We have a dedicated sensory room for our SOUL
@@ -277,15 +279,15 @@ const PlanVisit = () => {
 
           {/**fourth container */}
 
-          <div className="relative w-[100%] bg-[#F1E4EB] border-b-4 border-black">
+          <div className="relative w-[100%] bg-[#F1E4EB] border-b-2 border-black">
             <div className="">
-              <div className=" w-[100%]   p-10 flex justify-center">
-                <div className=" rounded-3xl w-[1000px] bg-[#f5f0f0]  flex  overflow-hidden ">
-                  <div className="w-1/2 p-10">
-                    <h1 className="text-6xl font-bold ">
+              <div className=" w-[100%] p-3  md:p-10 flex justify-center">
+                <div className=" rounded-3xl w-[1000px] bg-white  md:flex  overflow-hidden ">
+                  <div className="md:w-1/2 p-4 md:p-10">
+                    <h1 className="text-3xl nav md:text-6xl font-bold ">
                       Accessibility and additional needs
                     </h1>
-                    <p className="pt-32 pb-4">
+                    <p className="pt-16 md:pt-32 pb-4 md:pb-4">
                       We have accessible parking on site and all public areas of
                       the building are on the ground floor with no steps. We
                       have facilities for those with sensory issues too. And
@@ -298,9 +300,9 @@ const PlanVisit = () => {
                       give
                     </button>
                   </div>
-                  <div className="w-1/2 p-12 flex justify-center items-center ">
+                  <div className="md:w-1/2 md:p-12 p-2 flex justify-center items-center ">
                     <img
-                      className="object-cover rounded-xl h-[400px] w-[900px]"
+                      className="object-cover rounded-xl h-[320px] md:h-[400px] w-[900px]"
                       src={image1}
                       alt=""
                     />
@@ -311,7 +313,7 @@ const PlanVisit = () => {
             <div className="  bg-[#333333]">
               {/**infinity scroll */}
               <div className=" w-[100%] py-12 lg:py-28 xl:py-36 flex justify-center overflow-hidden items-center ">
-                <h1 className="scroll uppercase text-white  w-[100%] whitespace-nowrap head text-[7em] ">
+                <h1 className="scroll uppercase text-white  w-[100%] whitespace-nowrap head text-4xl md:text-[7em] ">
                   {" "}
                   Outward focused - life giving - christ center - people
                   empowering - Outward focused - life giving - christ center -
@@ -323,15 +325,17 @@ const PlanVisit = () => {
         </div>
         {/**tab view footer */}
         {/**form */}
-        <div className="flex bg-[#F1E4EB] border-b-2 border-black lg:hidden   px-10 py-16">
+        <div className="md:flex bg-[#F1E4EB] border-b-2 border-black lg:hidden px-5 py-10  md:px-10 md:py-16">
           <div>
-            <h1 className="font-semibold uppercase xl:text-xl">Stay tuned</h1>
-            <p className="flex-warp xl:text-lg">
+            <h1 className="font-semibold uppercase text-sm md:text-xl">
+              Stay tuned
+            </h1>
+            <p className="flex-warp   text-sm md:text-lg">
               Sign up for our newsletter to find out more about what's happening
               at SOUL Chruch!
             </p>
           </div>
-          <form class="w-full max-w-sm">
+          <form class="w-full max-w-sm py-2">
             <div class=" md:items-center ">
               <div class="w-full py-2">
                 <input
@@ -371,7 +375,7 @@ const PlanVisit = () => {
             <div class="md:flex md:items-center">
               <div class="md:w-2/3">
                 <button
-                  class="shadow bg-black hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-full"
+                  class="shadow bg-black hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white px-4 py-1 md:py-2 md:px-4 rounded-full"
                   type="button"
                 >
                   Submit
@@ -381,17 +385,19 @@ const PlanVisit = () => {
           </form>
         </div>
         {/**tab footer */}
-        <div className=" flex bg-[#F1E4EB] lg:hidden  justify-between px-16 py-24">
-          <div className="">logo</div>
-          <div className="w-[20%]">
-            <h1 className="font-semibold xl:backdrop:text-base">CONTACT</h1>
-            <p className="flex-warp xl:text-lg">
+        <div className=" md:flex bg-[#F1E4EB] lg:hidden  justify-between pl-6 py-16 md:pl-0 md:px-16 md:py-24">
+          <div className="py-4">logo</div>
+          <div className="md:w-[20%] w-[40%]   ">
+            <h1 className="font-semibold   text-xs md:text-base ">CONTACT</h1>
+            <p className="md:flex-warp py-4 md:text-lg">
               Soul CHURCH 4 Mason Rd, NR6 6RF ‍info@soulchurch.com ‍01234 567890{" "}
             </p>
           </div>
           <div className="">
-            <h1 className="font-semibold uppercase xl:text-base">Link</h1>
-            <ul className="flex-warp xl:text-lg">
+            <h1 className="font-semibold uppercase  text-xs md:text-base ">
+              Link
+            </h1>
+            <ul className="flex-warp xl:text-lg py-4">
               <li>connect</li>
               <li>HomePage</li>
               <li>About</li>
@@ -404,8 +410,10 @@ const PlanVisit = () => {
             </ul>
           </div>
           <div className="">
-            <h1 className="font-semibold uppercase xl:text-base">Media</h1>
-            <ul className="flex-warp xl:text-lg">
+            <h1 className="font-semibold uppercase  text-xs md:text-base ">
+              Media
+            </h1>
+            <ul className="flex-warp xl:text-lg py-4">
               <li>Youtube</li>
               <li>Instagram</li>
               <li>Twitter</li>

@@ -54,30 +54,30 @@ const Connect = () => {
         initial={{ scale: 1 }}
         animate={{ scale: 0 }}
         transition={{ duration: 1.5, delay: 2.9 }}
-        className="fixed flex justify-center rounded-full bg-[#D1BFA4]  z-[70] items-center w-[100%] h-[100vh]"
+        className="fixed flex justify-center rounded-full  z-[70] items-center w-[100%] h-[100vh]"
       >
         <motion.div
           initial={{ scale: 100 }}
           animate={{ scale: 0 }}
-          transition={{ duration: 1.5, delay: 3 }}
-          className="relative bg-[#D1BFA4] w-[1000px] h-[1000px] rounded-full"
+          transition={{ duration: 1.5, delay: 2.9 }}
+          className="relative bg-[#D1BFA4] w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[1000px] lg:h-[1000px] overflow-hidden rounded-full"
         ></motion.div>
-        <div className=" w-[1000px] absolute  overflow-hidden">
+        <div className="w-[1000px]  absolute   overflow-hidden">
           <motion.div
-            initial={{ x: 130 }}
-            animate={{ x: -1250 }}
+            initial={{ x: 0 }}
+            animate={{ x: -1000 }}
             transition={{
               duration: 2,
               delay: 2,
               type: "spring",
-              stiffness: 50,
+              stiffness: 45,
             }}
-            className=" py-10 px-4 text-center flex w-[2000px] justify-between"
+            className=" py-14 px-4 text-center w-[2000px]  flex justify-between"
           >
-            <motion.h1 className=" head uppercase text-[150px] font-bold     ">
+            <h1 className=" head uppercase w-[1000px] text-center  text-4xl  md:text-[80px] lg:text-[150px] font-bold   ">
               Soul Church
-            </motion.h1>
-            <h1 className=" head uppercase text-[150px] font-bold   ">
+            </h1>
+            <h1 className=" head uppercase w-[1000px] text-center   text-4xl  md:text-[80px] lg:text-[150px]  font-bold ">
               Connect
             </h1>
           </motion.div>
@@ -94,7 +94,7 @@ const Connect = () => {
               <motion.div className="absolute z-10  flex justify-center items-end  squad  w-[100%] overflow-hidden h-[100vh]">
                 <div
                   ref={ref}
-                  className="uppercase head md:py-12 xl:py-0  text-white text-8xl lg:text-9xl xl:text-[200px]"
+                  className="uppercase head md:py-12 xl:py-10  text-white text-5xl md:text-8xl lg:text-9xl xl:text-[200px]"
                 >
                   Get Connected
                 </div>
@@ -105,7 +105,7 @@ const Connect = () => {
                 transition={{ duration: 2, delay: 3.5 }}
               >
                 <img
-                  className="rounded-b-[80px] lg:rounded-b-[150px]   h-[100vh] w-[100%]  object-cover"
+                  className="rounded-b-3xl md:rounded-b-[80px] lg:rounded-b-[150px]   h-[100vh] w-[100%]  object-cover"
                   src={background1}
                   alt=""
                 />
@@ -114,19 +114,19 @@ const Connect = () => {
           </div>
 
           {/**content slide page */}
-          <div className="w-[100%] relative  px-10 mx-auto flex ">
-            <div className="w-1/2 flex justify-center items-center p-4 lg:p-16 xl:p-24">
+          <div className="w-[100%] relative px-3 md:px-10 md:mx-auto md:flex ">
+            <div className="md:w-1/2 flex justify-center items-center py-6 md:py-0 md:p-4 lg:p-16 xl:p-24">
               <div>
-                <h1 className="text-5xl xl:text-7xl head font-light xl:font-semibold">
+                <h1 className="text-3xl md:text-5xl xl:text-7xl head font-light xl:font-semibold">
                   Life is better when you go through it together.
                 </h1>
-                <p className="pt-10 xl:pt-36 text-lg xl:text-2xl">
+                <p className="pt-5 md:pt-10 xl:pt-36 text-base md:text-lg xl:text-2xl">
                   Be part of the SOUL family – join a group and team and get
                   connected today.
                 </p>
               </div>
             </div>
-            <div className="w-1/2 h-[100vh] flex justify-center items-center ">
+            <div className="md:w-1/2 md:h-[100vh] pb-6 md:pb-0 md:flex justify-center items-center ">
               <div className="">
                 <img
                   className="xl:w-[500px] w-[400px] h-[400px] lg:h-[500px] xl:py-10 rounded-3xl xl:h-[100vh] object-cover"
@@ -140,11 +140,11 @@ const Connect = () => {
 
         {/**how we church */}
         <div className="bg-[#C6C5B9]   rounded-t-[80px] z-30">
-          <div className="bg-[#333333] rounded-t-[80px] rounded-b-[80px]">
+          <div className="bg-[#333333] rounded-3xl md:rounded-[80px]">
             <div className="w-[100%]  ">
               {/**heading */}
-              <div className="p-8 lg:p-14">
-                <h1 className="text-7xl lg:text-8xl xl:text-[110px] text-white font-bold">
+              <div className="p-8 md:p-8 lg:p-14">
+                <h1 className="text-4xl md:text-7xl lg:text-8xl xl:text-[110px] text-white font-bold">
                   New Here?
                 </h1>
               </div>
@@ -243,10 +243,10 @@ const Connect = () => {
           </div>
         </div>
         {/**Find a group*/}
-        <div className="w-[100%] relative py-12 border-black border-b-4  px-10 mx-auto flex justify-center">
-          <div className="w-1/2 z-10 flex justify-center items-center p-24">
+        <div className="w-[100%] relative py-16 md:py-12 border-black border-b-4  px-10 mx-auto md:flex justify-center">
+          <div className="md:w-1/2 z-10 flex justify-center items-center md:p-24">
             <div>
-              <h1 className="text-9xl head uppercase font-semibold">
+              <h1 className="text-4xl md:text-9xl head uppercase font-semibold">
                 Find A group
               </h1>
               <p className="text-base py-4 ">
@@ -259,47 +259,47 @@ const Connect = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/2 h-[100vh] relative  flex justify-center items-center ">
+          <div className="md:w-1/2  relative hidden md:flex justify-center items-center ">
             <img
-              className=" w-[200px] -mt-80 ml-24 -rotate-45 absolute  h-[250px] lg:h-[300px] object-cover"
+              className=" w-[200px] -mt-80 ml-24 -rotate-45 md:absolute   h-[250px] lg:h-[300px] object-cover"
               src={contentbg}
               alt=""
             />
             <img
-              className=" w-[200px] ml-24 z-10 -rotate-12 absolute  h-[250px] lg:h-[300px] object-cover"
+              className=" w-[200px] ml-24 z-10 -rotate-12 md:absolute   h-[250px] lg:h-[300px] object-cover"
               src={one}
               alt=""
             />
             <img
-              className=" w-[200px] mt-52 mr-72 absolute  h-[250px] lg:h-[300px] object-cover"
+              className=" w-[200px] mt-52 mr-72 md:absolute   h-[250px] lg:h-[300px] object-cover"
               src={two}
               alt=""
             />
           </div>
         </div>
         {/**Find a team */}
-        <div className="w-[100%] relative  px-10  flex ">
-          <div className="w-1/2 flex justify-start items-center    ">
+        <div className="w-[100%] relative px-4 md:px-10  flex ">
+          <div className="md:w-1/2  flex justify-start items-center    ">
             <div>
               <div className="lg:px-24 lg:py-40">
                 <img
-                  className="w-[280px]  h-[300px] object-cover"
+                  className="w-[180px] h-[200px] md:w-[280px]  md:h-[300px] object-cover"
                   src={contentbg}
                   alt=""
                 />
               </div>
             </div>
           </div>
-          <div className="w-1/2 ml-36 flex justify-center py-44 ">
-            <h1 className="text-9xl head uppercase font-semibold">
+          <div className="md:w-1/2 ml-12 md:ml-36 flex justify-center py-28 md:py-44 ">
+            <h1 className="text-5xl md:text-9xl head uppercase font-semibold">
               Find A team
             </h1>
           </div>
         </div>
         {/**find a team 2 */}
-        <div className="border-b-4 border-black pb-24">
-          <div className="ml-10 lg:ml-24 flex ">
-            <div className="w-[40%] flex ">
+        <div className="border-b-4 border-black px-4 md:px-0 pb-24">
+          <div className="md:ml-10 lg:ml-24 md:flex ">
+            <div className="md:w-[40%] flex ">
               <div>
                 <p className="text-base lg:text-xl ">
                   {" "}
@@ -308,12 +308,12 @@ const Connect = () => {
                   maintenance, admin or you’re a friendly face, we can help you
                   find your perfect fit!
                 </p>
-                <button className="mt-6   px-16 py-4 bg-black hover:bg-white uppercase font-semibold border-2 border-black text-white hover:text-black duration-300 rounded-full">
+                <button className="mt-6  px-6 md:px-16 py-2 md:py-4 bg-black hover:bg-white uppercase text-sm md:text-xl font-semibold border-2 border-black text-white hover:text-black duration-300 rounded-full">
                   Learn more
                 </button>
               </div>
             </div>
-            <div className="w-[60%] -mt-24 ml-28 lg:ml-10">
+            <div className="w-[60%] hidden md:block -mt-24 ml-28 lg:ml-10">
               <img
                 className="lg:w-[280px] w-[200px] h-[300px] -rotate-12 lg:h-[400px] object-cover"
                 src={contentbg}
@@ -325,15 +325,17 @@ const Connect = () => {
       </div>
       {/**tab view footer */}
       {/**form */}
-      <div className="flex bg-[#F1E4EB] border-b-2 border-black lg:hidden   px-10 py-16">
+      <div className="md:flex bg-[#F1E4EB] border-b-2 border-black lg:hidden px-5 py-10  md:px-10 md:py-16">
         <div>
-          <h1 className="font-semibold uppercase xl:text-xl">Stay tuned</h1>
-          <p className="flex-warp xl:text-lg">
+          <h1 className="font-semibold uppercase text-sm md:text-xl">
+            Stay tuned
+          </h1>
+          <p className="flex-warp   text-sm md:text-lg">
             Sign up for our newsletter to find out more about what's happening
             at SOUL Chruch!
           </p>
         </div>
-        <form class="w-full max-w-sm">
+        <form class="w-full max-w-sm py-2">
           <div class=" md:items-center ">
             <div class="w-full py-2">
               <input
@@ -371,7 +373,7 @@ const Connect = () => {
           <div class="md:flex md:items-center">
             <div class="md:w-2/3">
               <button
-                class="shadow bg-black hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-full"
+                class="shadow bg-black hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white px-4 py-1 md:py-2 md:px-4 rounded-full"
                 type="button"
               >
                 Submit
@@ -381,17 +383,19 @@ const Connect = () => {
         </form>
       </div>
       {/**tab footer */}
-      <div className=" flex bg-[#F1E4EB] lg:hidden  justify-between px-16 py-24">
-        <div className="">logo</div>
-        <div className="w-[20%]">
-          <h1 className="font-semibold xl:backdrop:text-base">CONTACT</h1>
-          <p className="flex-warp xl:text-lg">
+      <div className=" md:flex bg-[#F1E4EB] lg:hidden  justify-between pl-6 py-16 md:pl-0 md:px-16 md:py-24">
+        <div className="py-4">logo</div>
+        <div className="md:w-[20%] w-[40%]   ">
+          <h1 className="font-semibold   text-xs md:text-base ">CONTACT</h1>
+          <p className="md:flex-warp py-4 md:text-lg">
             Soul CHURCH 4 Mason Rd, NR6 6RF ‍info@soulchurch.com ‍01234 567890{" "}
           </p>
         </div>
         <div className="">
-          <h1 className="font-semibold uppercase xl:text-base">Link</h1>
-          <ul className="flex-warp xl:text-lg">
+          <h1 className="font-semibold uppercase  text-xs md:text-base ">
+            Link
+          </h1>
+          <ul className="flex-warp xl:text-lg py-4">
             <li>connect</li>
             <li>HomePage</li>
             <li>About</li>
@@ -404,8 +408,10 @@ const Connect = () => {
           </ul>
         </div>
         <div className="">
-          <h1 className="font-semibold uppercase xl:text-base">Media</h1>
-          <ul className="flex-warp xl:text-lg">
+          <h1 className="font-semibold uppercase  text-xs md:text-base ">
+            Media
+          </h1>
+          <ul className="flex-warp xl:text-lg py-4">
             <li>Youtube</li>
             <li>Instagram</li>
             <li>Twitter</li>

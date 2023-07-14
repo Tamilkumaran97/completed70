@@ -4,7 +4,7 @@ import contentbg from "./assets/aboutus.jpg";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Slider from "react-slick";
+/* import Slider from "react-slick"; */
 import "/node_modules/slick-carousel/slick/slick.css";
 import "/node_modules/slick-carousel/slick/slick-theme.css";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
@@ -16,6 +16,7 @@ const Section1 = () => {
   const zoom = useRef(null);
   const fixed = useRef(null);
   const para = useRef(null);
+  const zoom1 = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
@@ -23,6 +24,7 @@ const Section1 = () => {
     const el = zoom.current;
     const fix = fixed.current;
     const pa = para.current;
+    const el1 = zoom1.current;
 
     gsap.to(pa, {
       scale: 1.1,
@@ -61,11 +63,11 @@ const Section1 = () => {
         scale: 6,
         duration: 10,
         scrollTrigger: {
-          trigger: element,
-          start: "bottom+=640 top",
-          end: "+=250",
-        /*   markers: true, */
-          scrub: 4,
+          trigger: el1,
+          start: "top top",
+          end: "bottom top",
+          /*  markers: true, */
+          scrub: 2,
         },
       }
     );
@@ -87,18 +89,7 @@ const Section1 = () => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   }, []);
 
-  let box = document.querySelector(".product");
-
-  const btNext = () => {
-    let width = box.clientWidth;
-    box.scrollLeft = box.scrollLeft - width;
-  };
-  const btPrev = () => {
-    let width = box.clientWidth;
-    box.scrollLeft = box.scrollLeft + width;
-  };
-
-  const settings = {
+ /*  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -106,7 +97,7 @@ const Section1 = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-  };
+  }; */
 
   return (
     <div className=" lg:pb-[90vh] overflow-hidden ">
@@ -121,24 +112,24 @@ const Section1 = () => {
           initial={{ scale: 100 }}
           animate={{ scale: 0 }}
           transition={{ duration: 1.5, delay: 2.9 }}
-          className="relative bg-[#D1BFA4] w-[1000px] h-[1000px] rounded-full"
+          className="relative bg-[#D1BFA4] w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[1000px] lg:h-[1000px] overflow-hidden rounded-full"
         ></motion.div>
-        <div className=" w-[1000px] absolute  overflow-hidden">
+        <div className="w-[1000px]  absolute   overflow-hidden">
           <motion.div
-            initial={{ x: 130 }}
-            animate={{ x: -1010 }}
+            initial={{ x: 0 }}
+            animate={{ x: -1000 }}
             transition={{
               duration: 2,
               delay: 2,
               type: "spring",
-              stiffness: 50,
+              stiffness: 45,
             }}
-            className=" py-10 px-4 text-center flex w-[2000px] justify-between"
+            className=" py-14 px-4 text-center w-[2000px]  flex justify-between"
           >
-            <h1 className=" head uppercase text-[150px] font-bold   ">
+            <h1 className=" head uppercase w-[1000px] text-center  text-4xl  md:text-[80px] lg:text-[150px] font-bold   ">
               Soul Church
             </h1>
-            <h1 className=" head uppercase text-[150px]  font-bold ">
+            <h1 className=" head uppercase w-[1000px] text-center   text-4xl  md:text-[80px] lg:text-[150px]  font-bold ">
               welcome Home
             </h1>
           </motion.div>
@@ -146,12 +137,12 @@ const Section1 = () => {
       </motion.div>
       {/**main */}
       <div className="bg-[#C6C5B9]  w-[100%] relative z-10 ">
-        <div className="bg-white rounded-b-[100px] ">
+        <div className="bg-white rounded-3xl md:rounded-b-[100px] ">
           {/**image */}
 
           <div ref={para} className="relative  ">
-            <div className="relative ">
-              <motion.div className="absolute  flex flex-col justify-center  items-center   w-[100%]  overflow-hidden h-[100vh]  ">
+            <div className="relative overflow-hidden ">
+              {/*   <motion.div className="absolute  flex flex-col justify-center  items-center   w-[100%]  overflow-hidden h-[100vh]  ">
                 <motion.div
                   ref={ref}
                   className="w-[100%] lg:w-[80vw]  lg:px-10 mt-[50vh] lg:mt-[50vh] cursor-grab bg-[#ECDDD5] rounded-3xl "
@@ -233,14 +224,20 @@ const Section1 = () => {
                     </div>
                   </Slider>
                 </motion.div>
-              </motion.div>
+              </motion.div>  */}
+              <h1
+                ref={ref}
+                className="absolute head text-5xl md:text-8xl lg:text-9xl lg:py-10 xl:py-8 xl:text-[180px] text-center w-[100%] bottom-2 uppercase text-white"
+              >
+                Welcome Home
+              </h1>
               <motion.div
                 initial={{ scale: 2 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 2, delay: 3.5 }}
               >
                 <img
-                  className="rounded-b-[150px]  h-[100vh] w-[100%]  object-cover"
+                  className=" rounded-b-[80px] lg:rounded-b-[150px]  h-[100vh] w-[100%]  object-cover"
                   src={background1}
                   alt=""
                 />
@@ -248,33 +245,21 @@ const Section1 = () => {
             </div>
           </div>
           {/**content slide page */}
-          <div className="w-[100%] py-4 md:py-10 block lg:py-0 px-4 md:px-10 mx-auto md:flex ">
-            <div className="md:w-1/2 flex justify-center items-center xl:p-24">
-              <div>
-                <motion.h1
-                  initial={{ x: 400, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 1 }}
-                  className=" text-[38px] md:text-5xl lg:text-7xl xl:text-8xl font-semibold"
-                >
-                  Welcome Home
-                </motion.h1>
-                <motion.p
-                  initial={{ x: 400, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.4 }}
-                  className="md:pt-20 xl:pt-36 md:text-lg lg:text-xl xl:text-2xl"
-                >
-                  SOUL Church is a vibrant and friendly church in the beautiful
-                  city of Norwich. We love Jesus and we love people. We'd love
-                  to see you here soon!
-                </motion.p>
-              </div>
+          <div className="w-[100%]  px-3  md:px-10 mx-auto md:flex ">
+            <div className="md:w-1/2 p-2 lg:p-12 xl:p-24">
+              <h1 className="text-5xl nav md:text-6xl lg:text-7xl xl:text-8xl font-semibold">
+                Welcome Home
+              </h1>
+              <p className="pt-5 md:pt-10 xl:pt-16 text-[15px] md:text-base xl:text-xl ">
+                SOUL Church is a vibrant and friendly church in the beautiful
+                city of Norwich. We love Jesus and we love people. We'd love to
+                see you here soon!
+              </p>
             </div>
-            <div className="md:w-1/2 py-6 md:py-10 flex justify-center items-center ">
+            <div className="md:w-1/2 py-2 md:py-4 flex justify-center items-center ">
               <div className="">
                 <img
-                  className="rounded-bl-[2000px] rounded-tl-full md:h-[300px] lg:h-[500px] xl:h-[600px] w-[600px] rounded-br-[2000px] object-cover"
+                  className=" rounded-tl-full w-[600px] md:w-auto rounded-br-[1000px] md:rounded-br-[2000px] h-[300px] md:h-[350px] xl:h-[90vh]  object-cover"
                   src={contentbg}
                   alt=""
                 />
@@ -285,59 +270,64 @@ const Section1 = () => {
         {/**motion love with framer motion */}
         <div className=" z-30">
           <div className=" relative container mx-auto overflow-hidden w-[100%]  h-[150vh] px-10">
-            <div ref={fixed} className="w-[100%] h-[100vh]">
-              <div className=" absolute w-[100%] h-[100vh] flex justify-center items-center">
+            <div ref={fixed} className="w-[100%] h-[100vh] ">
+              <div
+                ref={zoom1}
+                className=" absolute w-[100%] h-[100vh] flex justify-center items-center"
+              >
                 <div
                   ref={zoom}
-                  className="absolute h-[400px] w-[400px] flex justify-center items-center border-[0.01px]  border-black/50 rounded-full"
+                  className="absolute h-[400px]  w-[400px] flex justify-center items-center border-[0.01px]  border-black/50 rounded-full"
                 ></div>
-                <h1 className="   ">
+                <h1 className="  text-black nav ">
                   OUR MISSION IS <br />
                   LOVE IN ACTION
                 </h1>
               </div>
-              <div className="head uppercase  w-[100%] h-[100vh] flex flex-col justify-between  absolute text-[50px] md:text-[130px] lg:text-[130px] xl:text-[150px] font-extrabold">
-                <motion.div
-                  initial={{ opacity: 0, y: 100 }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 2,
-                  }}
-                  className="md:ml-16"
-                >
-                  Love
-                </motion.div>
+              <div className="head uppercase  w-[100%] h-[100vh]  flex justify-center items-center  absolute text-[50px] sm:text-[100px] md:text-[130px] lg:text-[130px] xl:text-[150px] font-extrabold">
+                <div className="w-[100%] h-[100vh] flex flex-col justify-center items-center">
+                  <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      duration: 2,
+                    }}
+                    className="md:ml-16 w-[100%]"
+                  >
+                    Love
+                  </motion.div>
 
-                <motion.h1
-                  initial={{ opacity: 0, y: 200 }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 2,
-                  }}
-                  className="w-[100%] flex justify-end "
-                >
-                  <h1>In</h1>
-                </motion.h1>
-                <motion.h1
-                  initial={{ opacity: 0, y: 100 }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 2,
-                  }}
-                  className="w-[100%] flex justify-evenly"
-                >
-                  <div></div>
-                  <h1> Action</h1>
-                </motion.h1>
+                  <motion.h1
+                    initial={{ opacity: 0, y: 200 }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      duration: 2,
+                    }}
+                    className="w-[100%] flex justify-end "
+                  >
+                    <h1>In</h1>
+                  </motion.h1>
+                  <motion.h1
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      duration: 2,
+                    }}
+                    className="w-[100%]  flex justify-evenly"
+                  >
+                    <div></div>
+                    <h1> Action</h1>
+                  </motion.h1>
+                </div>
               </div>
             </div>
           </div>
@@ -361,7 +351,7 @@ const Section1 = () => {
                 <motion.div
                   drag="x"
                   dragConstraints={{ right: 0, left: -width }}
-                  className="product flex gap-6  dark:bg-transparent  p-6 lg:p-6  "
+                  className="product-container flex gap-6  dark:bg-transparent  p-6 lg:p-6  "
                 >
                   <motion.div className="relative">
                     <motion.div className=" w-[18rem] xl:w-[20rem] lg:h-[22rem] xl:h-[24rem]  rounded-3xl bg-white hover:bg-blue-400 ">
@@ -464,20 +454,14 @@ const Section1 = () => {
 
               {/**button */}
               <div className="flex p-8 cursor-pointer">
-                <AiOutlineArrowLeft
-                  onClick={btNext}
-                  className="text-5xl bg-white cursor-pointer p-2 mr-2 rounded-full  "
-                />
-                <AiOutlineArrowRight
-                  onClick={btPrev}
-                  className="text-5xl bg-white cursor-pointer p-2 rounded-full  "
-                />
+                <AiOutlineArrowLeft className="text-5xl bg-white cursor-pointer p-2 mr-2 rounded-full  " />
+                <AiOutlineArrowRight className="text-5xl bg-white cursor-pointer p-2 rounded-full  " />
               </div>
             </div>
           </div>
           {/**infinity scroll */}
-          <div className=" w-[100%] py-16 lg:py-36 flex justify-center overflow-hidden items-center ">
-            <h1 className="scroll uppercase  w-[100%] whitespace-nowrap head md:text-[5em]  lg:text-[6em] xl:text-[7em] ">
+          <div className=" w-[100%] py-16 lg:py-40 flex justify-center overflow-hidden items-center ">
+            <h1 className="scroll uppercase  w-[100%] whitespace-nowrap head text-4xl  md:text-[5em]  lg:text-[6em] xl:text-[7em] ">
               {" "}
               Outward focused - life giving - christ center - people empowering
               - Outward focused - life giving - christ center - people
@@ -488,19 +472,21 @@ const Section1 = () => {
       </div>
       {/**tab view footer */}
       {/**form */}
-      <div className="flex bg-[#F1E4EB] border-b-2 border-black lg:hidden   px-10 py-16">
+      <div className="md:flex bg-[#F1E4EB] border-b-2 border-black lg:hidden px-5 py-10  md:px-10 md:py-16">
         <div>
-          <h1 className="font-semibold uppercase xl:text-xl">Stay tuned</h1>
-          <p className="flex-warp xl:text-lg">
+          <h1 className="font-semibold nav uppercase text-sm md:text-xl">
+            Stay tuned
+          </h1>
+          <p className="flex-warp  nav text-sm md:text-lg">
             Sign up for our newsletter to find out more about what's happening
             at SOUL Chruch!
           </p>
         </div>
-        <form class="w-full max-w-sm">
+        <form class="w-full max-w-sm py-2">
           <div class=" md:items-center ">
             <div class="w-full py-2">
               <input
-                class="bg-white rounded-full appearance-none border-2 border-gray-200  w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                class="bg-white rounded-full nav appearance-none border-2 border-gray-200  w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                 id="inline-full-name"
                 type="text"
                 placeholder="first name"
@@ -508,7 +494,7 @@ const Section1 = () => {
             </div>
             <div class="w-full pb-2">
               <input
-                class="bg-white rounded-full appearance-none border-2 border-gray-200  w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                class="bg-white rounded-full nav appearance-none border-2 border-gray-200  w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                 id="inline-full-name"
                 type="text"
                 placeholder="sure name"
@@ -518,7 +504,7 @@ const Section1 = () => {
           <div class="">
             <div class="w-full  mb-4">
               <input
-                class="bg-white appearance-none border-2 border-gray-200 rounded-full w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                class="bg-white appearance-none nav border-2 border-gray-200 rounded-full w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                 id="inline-password"
                 type="email"
                 placeholder="Email address"
@@ -528,13 +514,15 @@ const Section1 = () => {
           <div class="r mb-4">
             <label class=" block text-gray-500 font-bold">
               <input class="mr-2 leading-tight" type="checkbox" />
-              <span class="text-sm">I accept Soul Church's privacy policy</span>
+              <span class="text-sm nav">
+                I accept Soul Church's privacy policy
+              </span>
             </label>
           </div>
           <div class="md:flex md:items-center">
             <div class="md:w-2/3">
               <button
-                class="shadow bg-black hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-full"
+                class="shadow bg-black nav hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white px-4 py-1 md:py-2 md:px-4 rounded-full"
                 type="button"
               >
                 Submit
@@ -544,17 +532,19 @@ const Section1 = () => {
         </form>
       </div>
       {/**tab footer */}
-      <div className=" flex bg-[#F1E4EB] lg:hidden  justify-between px-16 py-24">
-        <div className="">logo</div>
-        <div className="w-[20%]">
-          <h1 className="font-semibold xl:backdrop:text-base">CONTACT</h1>
-          <p className="flex-warp xl:text-lg">
+      <div className=" md:flex bg-[#F1E4EB] lg:hidden  justify-between pl-6 py-16 md:pl-0 md:px-16 md:py-24">
+        <div className="py-4">logo</div>
+        <div className="md:w-[20%] w-[40%]   ">
+          <h1 className="font-semibold   text-xs md:text-base nav">CONTACT</h1>
+          <p className="md:flex-warp nav py-4 md:text-lg">
             Soul CHURCH 4 Mason Rd, NR6 6RF ‍info@soulchurch.com ‍01234 567890{" "}
           </p>
         </div>
         <div className="">
-          <h1 className="font-semibold uppercase xl:text-base">Link</h1>
-          <ul className="flex-warp xl:text-lg">
+          <h1 className="font-semibold uppercase nav text-xs md:text-base ">
+            Link
+          </h1>
+          <ul className="flex-warp nav xl:text-lg py-4">
             <li>connect</li>
             <li>HomePage</li>
             <li>About</li>
@@ -567,8 +557,10 @@ const Section1 = () => {
           </ul>
         </div>
         <div className="">
-          <h1 className="font-semibold uppercase xl:text-base">Media</h1>
-          <ul className="flex-warp xl:text-lg">
+          <h1 className="font-semibold uppercase nav text-xs md:text-base ">
+            Media
+          </h1>
+          <ul className="flex-warp xl:text-lg py-4 nav">
             <li>Youtube</li>
             <li>Instagram</li>
             <li>Twitter</li>
@@ -582,17 +574,19 @@ const Section1 = () => {
       <div className="hidden lg:block z-0 py-auto fixed bottom-0 w-[100%] h-[100vh]  bg-[#F1E4EB]">
         <div className="lg:pt-16 xl:pt-24 flex justify-between  bg-[#F1E4EB]">
           <div className="xl:w-3/5 flex  justify-between xl:px-20 py-28">
-            <div className="">logo</div>
+            <div className="nav">logo</div>
             <div className="w-[20%]">
-              <h1 className="font-semibold xl:backdrop:text-base">CONTACT</h1>
-              <p className="flex-warp xl:text-lg">
+              <h1 className="font-semibold xl:backdrop:text-base nav">
+                CONTACT
+              </h1>
+              <p className="flex-warp xl:text-lg nav">
                 Soul CHURCH 4 Mason Rd, NR6 6RF ‍info@soulchurch.com ‍01234
                 567890{" "}
               </p>
             </div>
             <div className="">
-              <h1 className="font-semibold uppercase xl:text-base">Link</h1>
-              <ul className="flex-warp xl:text-lg">
+              <h1 className="font-semibold uppercase nav xl:text-base">Link</h1>
+              <ul className="flex-warp xl:text-lg nav">
                 <li>connect</li>
                 <li>HomePage</li>
                 <li>About</li>
@@ -605,8 +599,10 @@ const Section1 = () => {
               </ul>
             </div>
             <div className="">
-              <h1 className="font-semibold uppercase xl:text-base">Media</h1>
-              <ul className="flex-warp xl:text-lg">
+              <h1 className="font-semibold uppercase nav xl:text-base">
+                Media
+              </h1>
+              <ul className="flex-warp nav xl:text-lg">
                 <li>Youtube</li>
                 <li>Instagram</li>
                 <li>Twitter</li>
@@ -616,8 +612,10 @@ const Section1 = () => {
             </div>
           </div>
           <div className="xl:w-2/5 w-[40%]  xl:px-28 px-10 py-28">
-            <h1 className="font-semibold uppercase xl:text-xl">Stay tuned</h1>
-            <p className="flex-warp xl:text-lg">
+            <h1 className="font-semibold uppercase nav xl:text-xl">
+              Stay tuned
+            </h1>
+            <p className="flex-warp nav xl:text-lg">
               Sign up for our newsletter to find out more about what's happening
               at SOUL Chruch!
             </p>
@@ -625,7 +623,7 @@ const Section1 = () => {
               <div class=" md:items-center ">
                 <div class="w-full py-2">
                   <input
-                    class="bg-white rounded-full appearance-none border-2 border-gray-200  w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    class="bg-white rounded-full nav appearance-none border-2 border-gray-200  w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                     id="inline-full-name"
                     type="text"
                     placeholder="first name"
@@ -633,7 +631,7 @@ const Section1 = () => {
                 </div>
                 <div class="w-full pb-2">
                   <input
-                    class="bg-white rounded-full appearance-none border-2 border-gray-200  w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    class="bg-white rounded-full nav appearance-none border-2 border-gray-200  w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                     id="inline-full-name"
                     type="text"
                     placeholder="sure name"
@@ -643,7 +641,7 @@ const Section1 = () => {
               <div class="">
                 <div class="w-full  mb-4">
                   <input
-                    class="bg-white appearance-none border-2 border-gray-200 rounded-full w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    class="bg-white appearance-none nav border-2 border-gray-200 rounded-full w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                     id="inline-password"
                     type="email"
                     placeholder="Email address"
@@ -653,7 +651,7 @@ const Section1 = () => {
               <div class="r mb-4">
                 <label class=" block text-gray-500 font-bold">
                   <input class="mr-2 leading-tight" type="checkbox" />
-                  <span class="text-sm">
+                  <span class="text-sm nav">
                     I accept Soul Church's privacy policy
                   </span>
                 </label>
@@ -661,7 +659,7 @@ const Section1 = () => {
               <div class="md:flex md:items-center">
                 <div class="md:w-2/3">
                   <button
-                    class="shadow bg-black hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-full"
+                    class="shadow nav bg-black hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-full"
                     type="button"
                   >
                     Submit

@@ -12,6 +12,7 @@ import Churchlife from "./Clonewebsite/Churchlife";
 
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import PlanVisit from "./Clonewebsite/PlanVisit";
+import Transition from "./Clonewebsite/Transition"
 
 function App() {
   const location = useLocation();
@@ -27,9 +28,10 @@ function App() {
           <Route path="/connect" element={<Connect />} />
           <Route path="/life" element={<Churchlife />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/plan" element={<PlanVisit />} />
+          <Route path="/plan" element={<PlanVisit />} /> 
         </Routes>
       </AnimatePresence>
+     {/*  <Transition/> */}
     </div>
   );
 }
